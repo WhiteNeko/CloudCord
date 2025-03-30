@@ -1,0 +1,161 @@
+﻿/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Container */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1.5s ease-out; /* Fade-in effect for the whole container */
+    overflow: hidden;
+}
+
+/* Header */
+.header h3 {
+    text-align: center;
+    font-size: 36px;
+    color: #4A90E2;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    animation: bounceIn 1s ease-out; /* Bounce-in effect */
+}
+
+/* Content Section */
+.content h4 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+    animation: fadeInUp 1s ease-out; /* Slide-up effect for section titles */
+}
+
+.content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out forwards; /* Fade-in effect for paragraphs */
+}
+
+    .content p:nth-child(odd) {
+        animation-delay: 0.5s;
+    }
+
+    .content p:nth-child(even) {
+        animation-delay: 1s;
+    }
+
+/* Flashy Hover Effects for Links */
+a {
+    color: #FF6347;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+    a::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #FF6347;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    a:hover {
+        color: #FF4500;
+        transform: scale(1.1);
+    }
+
+        a:hover::after {
+            transform: scaleX(1);
+        }
+
+/* Additional Styling for Content Section */
+.content {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+    /* Flashy Background Color for Hover */
+    .content h4:hover {
+        color: #FF6347;
+        cursor: pointer;
+        transform: scale(1.05);
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+
+    60% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .header h3 {
+        font-size: 28px;
+    }
+
+    .content h4 {
+        font-size: 20px;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+}
